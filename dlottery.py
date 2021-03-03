@@ -23,10 +23,24 @@ class Lottery:
         winner = secrets.choice(self.participants)
         won = int(self.pool - self.pool * self.participantsGiveToPool[winner])
         self.pool = self.pool - won
+        self.clearParticipants()
         return winner, str(won)
         
     def getPool(self):
         return str(self.pool)
+        
+    def clearParticipants(self):
+        self.participants = []
+        self.participantsGiveToPool = {}
+        
+    def setEntryFee(self, fee):
+        self.entryFee = fee
+    
+    def getEntryFee(self):
+        return str(self.entryFee)
+    
+    def countTickets(self):
+        return len(self.participants)
 
 
 if __name__ == "__main__":
