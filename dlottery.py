@@ -9,10 +9,11 @@ class Lottery:
         self.participantsGiveToPool = {}
     
     # takes name, amount of tickets, percent to give back to pool (from 0 to 1; 0.5 being 50%)
-    def addParticipant(self, name, amount = 1, nToPool = 0):
+    def addParticipant(self, name, amount = 1, nToPool = 0, fee = -1):
         for i in range(amount):
             self.participants.append(name)
-            self.pool = self.pool + self.entryFee
+            if fee == -1:
+                self.pool = self.pool + self.entryFee
             # if added multiple times, last n counts
             self.participantsGiveToPool[name] = nToPool
     
