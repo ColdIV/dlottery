@@ -24,10 +24,10 @@ class Lottery:
         won = int(self.pool - self.pool * self.participantsGiveToPool[winner])
         self.pool = self.pool - won
         self.clearParticipants()
-        return winner, str(won)
+        return winner, won
         
     def getPool(self):
-        return str(self.pool)
+        return self.pool
         
     def clearParticipants(self):
         self.participants = []
@@ -37,7 +37,7 @@ class Lottery:
         self.entryFee = fee
     
     def getEntryFee(self):
-        return str(self.entryFee)
+        return self.entryFee
     
     def countTickets(self):
         return len(self.participants)
@@ -51,5 +51,5 @@ if __name__ == "__main__":
     for p in ls:
         print (p)
     winner, value = test.getWinner()
-    print (winner + " won " + value + "!\nthe pool is now: " + test.getPool())
+    print (winner + " won " + str(value) + "!\nthe pool is now: " + str(test.getPool()))
     
