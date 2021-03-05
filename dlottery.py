@@ -8,7 +8,7 @@ class Lottery:
         # Some may want to fill the pot with n% of their winnings
         self.participantsGiveToPot = {}
     
-    # takes name, amount of tickets, percent to give back to the pot (from 0 to 1; 0.5 being 50%)
+    # takes name, amount of tickets, percent to give back to the pot (from 0 to 100)
     def addParticipant(self, name, amount = 1, nToPot = 0, fee = -1):
         if nToPot != 0:
             nToPot = nToPot / 100
